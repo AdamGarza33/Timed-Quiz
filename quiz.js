@@ -1,4 +1,5 @@
 const startBtn = document.getElementById('start-btn')
+const nextBtn = document.getElementById('next-btn')
 const questionContainerEl = document.getElementById('question-container')
 const questionsEl = document.getElementById('question')
 const answerButtonEl = document.getElementById('answer-buttons')
@@ -17,11 +18,29 @@ function startQuiz() {
 }
 
 function setNextQuestion() {
-  revealQuestion(randomQuestions[currentQuestionIndex])
+    resetState()
+    revealQuestion(randomQuestions[currentQuestionIndex])
 }
 
 function revealQuestion(question) {
   questionsEl.innerText = question.question
+  questions.answers.foreach(answer => {
+    const button = docement.createElement('button')
+    button.innerText = answer.text
+    button.classList.add('btn')
+    if (answer.correct) {
+        button.dataset.correct = answer.correct
+    }
+    button.addEventListener('click', selectAnswer)
+    answerButtonEl.appendChild(button)
+  })
+}
+
+function resetState() {
+    nextButton.classList.add('hide')
+    while (answerButtonEl.firstChild) {
+        answerButtonEl.removeChild(answerButtonEl.firstChild)
+    }
 }
 
 function selectAnswer() {
