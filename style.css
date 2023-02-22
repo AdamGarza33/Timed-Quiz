@@ -53,3 +53,41 @@ body.wrong {
     color: white;
     outline: none;
 }
+
+.btn:hover {
+    border-color: black;
+    ;
+}
+
+.btn.correct {
+    --hue: var(--hue-correct);
+    color: gold;
+
+}
+
+.btn.wrong {
+    --hue: var(--hue-wrong);
+
+}
+
+.start-btn {
+    font-size: 1rem;
+    font-weight: bolder;
+    padding: 5px 10px;
+}
+
+.next-btn {
+    font-size: 1rem;
+    font-weight: bolder;
+    padding: 5px 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
