@@ -1,47 +1,40 @@
-const startBtn = document.getElementById('start-btn')
-const nextBtn = document.getElementById('next-btn')
-const questionContainerEl = document.getElementById('question-container')
-const questionsEl = document.getElementById('question')
-const answerButtonEl = document.getElementById('answer-buttons')
+const startButton = document.getElementById('start-btn')
+const questionContainerElement = document.getElementById('question-container')
+const questionElement = document.getElementById('question')
+const answerButtonsElement = document.getElementById('answer-buttons')
 
 let randomQuestions, currentQuestionIndex
 
-startBtn.addEventListener('click', startQuiz)
+startButton.addEventListener('click', startGame)
 
-function startQuiz() {
-  console.log('Started')
-  startBtn.classList.add('hide')
-  randomQuestions = questions.sort(() => Math.random() - .5)
-  currentQuestionIndex = 0
-  questionContainerEl.classList.remove('hide')
-  setNextQuestion()
+function startGame() {
+    console.log('Started')
+    startButton.classList.add('hide')
+    randomQuestions = questions.sort(()=> Math.random() - .5)
+    currentQuestionIndex = 0
+    questionContainerElement.classList.remove('hide')
+    setNextQuestion()
 }
 
 function setNextQuestion() {
-    resetState()
-    revealQuestion(randomQuestions[currentQuestionIndex])
+  showQuestion(randomQuestions[currentQuestionIndex])
 }
 
-function revealQuestion(question) {
-  questionsEl.innerText = question.question
-  questions.answers.foreach(answer => {
-    const button = docement.createElement('button')
-    button.innerText = answer.text
-    button.classList.add('btn')
-    if (answer.correct) {
-        button.dataset.correct = answer.correct
-    }
-    button.addEventListener('click', selectAnswer)
-    answerButtonEl.appendChild(button)
-  })
+function showQuestion(question) {
+    questionElement.innerText = question.question
+    question.answers.answers.forEach(answer => {
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+        answerButtonsElement.appendChild(button)
+    })
+        
 }
 
-function resetState() {
-    nextButton.classList.add('hide')
-    while (answerButtonEl.firstChild) {
-        answerButtonEl.removeChild(answerButtonEl.firstChild)
-    }
-}
 
 function selectAnswer() {
 
@@ -50,9 +43,9 @@ function selectAnswer() {
 const questions = [
     {
         question: 'What does CSS stand for?',
-        answer: [
-            {text: 'Cascading Style Sheets', correct: true},
-            {text: 'Corrupted Star Shell', correct: false}
+        answers: [
+            { text: 'Cascading Style Sheets', correct: true },
+            { text: 'Cool Stuff Star', correct: false }
         ]
     }
 ]
