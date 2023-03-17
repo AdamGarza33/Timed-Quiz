@@ -12,3 +12,5 @@ This app is a timed quiz on JavaScript Fundamentals that can also store your hig
 * Wrong Answers will result in a deduction to the timer
 * Answer all questions before timer to finish the quiz
 * Save your initials and see your score!
+
+![image](https://user-images.githubusercontent.com/122870981/226048321-fe75b6cc-3fd1-4f0d-aa71-24ee775cc0c8.png)
