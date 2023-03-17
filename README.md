@@ -15,3 +15,4 @@ This app is a timed quiz on JavaScript Fundamentals that can also store your hig
 
 ![image](https://user-images.githubusercontent.com/122870981/226048599-c544088c-e7b8-4cb8-8dc1-9536e6caaa51.png)
 
+Link: https://adamgarza33.github.io/Timed-Quiz/
